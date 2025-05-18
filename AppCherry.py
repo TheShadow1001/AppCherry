@@ -1,9 +1,6 @@
 import streamlit as st
-import webbrowser
 
-st.info("Bienvenido a App Cherry, Espero te guste:)")
-
-st.title("AppCherry")
+st.title("         AppCherry")
 st.subheader("Welcome To AppCherry")
 st.write("AppCherry es una plataforma web, dónde los vendedores y compradores puedes elegir como una opción elegíble.")
 st.write("Con esta plataforma tendrás mucha comodidad a la hora de buscar o vender productots.")
@@ -28,3 +25,4 @@ correo = st.text_input("Corréo eléctronico")
 contrasena = st.text_input("contraseña")
 registrar = st.button("Registrarme a AppCherry")
 
+st.subheader("© @WikiDev")
