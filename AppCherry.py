@@ -2,7 +2,7 @@ import streamlit as st
 import tkinter as tk
 from tkinter import messagebox
 
-st.image("C:/Users/IK/Pictures/AppCherry2.png")
+st.image("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhao2edUau_Ywxfw60-Ug0-0w6MaHJ9EkYvfw4QyN4DTl-3lnzBhE7Awl5wXaELy6spSN4aoSQLVi95fFDcSNeT3RN8QR5NmsuGDyXj7PsmoPGFP1_W98hBvKyAJjFp2_83KhpRbpPVao_wINUWTn_YnsoWRkAxQM9GN3PMgJk08NHpfMmyTeUYokQurFo/s600/AppCherry2.png")
 
 messagebox.showinfo("Welcome to project")
 st.title("AppCherry")
