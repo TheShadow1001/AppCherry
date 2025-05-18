@@ -2,6 +2,8 @@ import streamlit as st
 import tkinter as tk
 from tkinter import messagebox
 
+st.image("C:/Users/IK/Pictures/AppCherry2.png")
+
 messagebox.showinfo("Welcome to project")
 st.title("AppCherry")
 st.subheader("Welcome To AppCherry")
