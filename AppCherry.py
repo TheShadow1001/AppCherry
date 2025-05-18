@@ -28,28 +28,3 @@ correo = st.text_input("Corréo eléctronico")
 contrasena = st.text_input("contraseña")
 registrar = st.button("Registrarme a AppCherry")
 
-if registrar:
-    if usuario and correo and contrasena:
-        st.success("¡Registro exitoso!")
-    else:
-        st.warning("Por favor, completa todos los campos.")
-
-st.subheader("Descripción")
-
-st.write("Esta página fué hecha 100% con streamlit, y la página está siendo mantenida y actualizada por mí.")
-st.write("La página Está en desarrollo, así que ahora no se podrá públicar ni comprar nada, pero dentro de 2 días será posible.")
-st.write("La página Es (BETA), así que es común algún error.")
-
-st.text_input("¿Cómo Debería Mejorarla?")
-
-Acepto = st.button("Acepto")
-
-if Acepto:
-    if Acepto:
-        st.success("Gracias por su opinión:)")
-    else:
-        st.warning("Diga algúna opinión sobre como mejorar la página.")
-
-st.info("Puedes visitar Mi página de juegos:)")
-
-st.write("https://wikiproyects.blogspot.com/2025/05/blog-post.html")
