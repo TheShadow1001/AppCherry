@@ -16,22 +16,9 @@ st.subheader("Tendrás que registrarte para procceder!")
 st.write("Si no te registras no podrás usar la app.")
 st.write("Solo Tendrás que poner un nombre, una contraseña osea crear una, y un correo eléctronico.")
 
-if "registrado" not in st.session_state:
-    st.session_state.registrado = False
-
-if not st.seassion_state.registrado:
-    st.subheader("Registro")
-    nombre = st.text_input("Nombre de usuario")
-    contraseña = st.text_input("Contraseña", type="password")
-    correo = st.text_input("Correo eléctronico")
-
-    if st.button("Registrarse"):
-        if nombre and contraseña and correo:
-            st.session_state.registrado = True
-            st.success("Registro exitoso!")
-        else:
-            st.error("Por favor, completa todos los campos.")
-         
+nombre = st.text_inpu("Nombre")
+correo = st.text_input("Correo_Eléctronico")
+numero = st.text_input("Número")
 
 st.subheader("Descripción")
 
