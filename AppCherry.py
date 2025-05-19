@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.title("AppCherry")
-st.image("C:\Users\IK\Desktop\AppCherry.png", caption="AppCherry", width=300)
+st.image("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2g8QuGzUByvOQXmlms6Y1Wr_T8lgZZDAK5mA-TyBzSO4G5taYS9OPQaYTS8QLqrXRfzxrsOiFs7S5luFexqvd5B59ovvJNubKKCd2YagaQNuPUySjhOhIvnvgirl1aopVYlVW8MvzQIyYUViFnd-CFqMtb7ustwYSMH1Pgh8J88IIWPJ5gfmEOJv4cYw/s600/AppCherry2.png")
 st.subheader("Welcome To AppCherry")
 st.write("AppCherry es una plataforma web, dónde los vendedores y compradores puedes elegir como una opción elegíble.")
 st.write("Con esta plataforma tendrás mucha comodidad a la hora de buscar o vender productots.")
