@@ -1,127 +1,42 @@
-import streamlit as st
+port streamlit as st
 
-# --------- Funciones helper ---------
-def load_projects():
-    return [
-        {
-            "title": "Web Corporativa",
-            "desc": "Diseño y desarrollo de sitio web responsive para empresa de tecnología.",
-            "img": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80",
-            "url": "https://example.com/proyecto1"
-        },
-        {
-            "title": "App Móvil",
-            "desc": "App híbrida multiplataforma con funcionalidades offline y notificaciones.",
-            "img": "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=600&q=80",
-            "url": "https://example.com/proyecto2"
-        },
-        {
-            "title": "E-commerce Moderno",
-            "desc": "Plataforma de comercio electrónico con carrito y pasarela de pago integrada.",
-            "img": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80",
-            "url": "https://example.com/proyecto3"
-        }
-    ]
+st.title("AppCherry")
+st.subheader("Welcome To AppCherry")
+st.write("AppCherry es una plataforma web, dónde los vendedores y compradores puedes elegir como una opción elegíble.")
+st.write("Con esta plataforma tendrás mucha comodidad a la hora de buscar o vender productots.")
+st.write("Cabe aclarar que esta página fue hecho por @WikiDev, talvez no sea alguien conocido.")
+st.write("Esta página es una beta v1.0, así que es posible la precencia de algún error.")
+st.write("Si tiene algúna duda o simplemente quieres dar algún error ocurrido puedes contactarme, por @WikiDeveloper@gmail.com")
+st.subheader("¡Agradezco! su paciencia, Estaré al tanto del proyecto lo mejor pósible por su comodidad.")
 
-def show_projects(projects):
-    st.markdown("## 🚀 Proyectos Destacados")
-    cols = st.columns(3)
-    for i, proj in enumerate(projects):
-        with cols[i]:
-            st.image(proj["img"], use_column_width=True, caption=proj["title"])
-            st.markdown(f"**{proj['title']}**")
-            st.write(proj["desc"])
-            st.markdown(f"[Ver más]({proj['url']})")
 
-# --------- Layout y configuración ---------
-st.set_page_config(
-    page_title="Panita Dev - Portfolio",
-    page_icon="👨‍💻",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+st.subheader("Tendrás que registrarte para procceder!")
 
-# --------- Barra lateral con navegación ---------
-with st.sidebar:
-    st.title("👋 Hola, soy Panita Dev")
-    st.write("Desarrollador web ultra profesional con estilo moderno y accesible.")
-    page = st.radio("Navegación", ["Inicio", "Proyectos", "Sobre mí", "Contacto"])
-    st.markdown("---")
-    st.write("🌙 Modo Oscuro/Claro")
-    if 'dark_mode' not in st.session_state:
-        st.session_state.dark_mode = False
-    if st.button("Toggle Tema"):
-        st.session_state.dark_mode = not st.session_state.dark_mode
+st.write("Si no te registras no podrás usar la app.")
+st.write("Solo Tendrás que poner un nombre, una contraseña osea crear una, y un correo eléctronico.")
 
-if st.session_state.dark_mode:
-    st.markdown(
-        """
-        <style>
-        .main {
-            background-color: #121212;
-            color: #eee;
-        }
-        .stButton>button {
-            background-color: #333;
-            color: #eee;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-else:
-    st.markdown(
-        """
-        <style>
-        .main {
-            background-color: #fff;
-            color: #111;
-        }
-        .stButton>button {
-            background-color: #eee;
-            color: #111;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+nombre = st.text_input("Aquí tú nombre:")
+CorreoElectronico = st.text_input("Aquí tú correo")
+Número = st.text_input("Aquí tú número")
 
-# --------- Contenido según selección ---------
-if page == "Inicio":
-    st.title("Hola, soy Panita Dev 👨‍💻")
-    st.write("""
-    Bienvenido a mi portfolio online. Aquí comparto mis proyectos, mi experiencia y cómo contactarme.
-    """)
-    st.image("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80", use_column_width=True)
+registrado = st.button("Registrarme")
 
-elif page == "Proyectos":
-    projects = load_projects()
-    show_projects(projects)
+st.subheader("Descripción")
 
-elif page == "Sobre mí":
-    st.header("Sobre mí")
-    st.write("""
-    Soy un desarrollador apasionado por crear experiencias web de alta calidad. Me especializo en frontend y backend, siempre buscando nuevas tecnologías y buenas prácticas para mejorar mis proyectos.
-    """)
-    st.write("Me encanta compartir conocimiento y aprender día a día. 🚀")
+st.write("Esta página fué hecha 100% con streamlit, y la página está siendo mantenida y actualizada por mí.")
+st.write("La página Está en desarrollo, así que ahora no se podrá públicar ni comprar nada, pero dentro de 2 días será posible.")
+st.write("La página Es (BETA), así que es común algún error.")
 
-elif page == "Contacto":
-    st.header("Contacto 📬")
-    with st.form("contact_form"):
-        nombre = st.text_input("Nombre completo", max_chars=50)
-        email = st.text_input("Correo electrónico")
-        mensaje = st.text_area("Mensaje", height=150)
-        enviar = st.form_submit_button("Enviar")
-        if enviar:
-            if len(nombre) < 3:
-                st.error("El nombre debe tener al menos 3 caracteres.")
-            elif "@" not in email or "." not in email:
-                st.error("Por favor, ingresa un correo válido.")
-            elif len(mensaje) < 10:
-                st.error("El mensaje debe tener al menos 10 caracteres.")
-            else:
-                st.success("¡Mensaje enviado con éxito! (Simulado)")
+st.text_input("¿Cómo Debería Mejorarla?")
 
-# --------- Footer simple ---------
-st.markdown("---")
-st.markdown("© 2025 Panita Dev. Todos los derechos reservados.")
+Acepto = st.button("Acepto")
+
+if Acepto:
+    if Acepto:
+        st.success("Gracias por su opinión")
+    else:
+        st.warning("Diga algúna opinión sobre como mejorar la página.")
+
+st.info("Puedes visitar Mi página de juegos:)")
+
+st.write("https://wikiproyects.blogspot.com/2025/05/blog-post.html")
