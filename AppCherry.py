@@ -1,41 +1,58 @@
 import streamlit as st
 
-st.title("AppCherry")
-st.image("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2g8QuGzUByvOQXmlms6Y1Wr_T8lgZZDAK5mA-TyBzSO4G5taYS9OPQaYTS8QLqrXRfzxrsOiFs7S5luFexqvd5B59ovvJNubKKCd2YagaQNuPUySjhOhIvnvgirl1aopVYlVW8MvzQIyYUViFnd-CFqMtb7ustwYSMH1Pgh8J88IIWPJ5gfmEOJv4cYw/s600/AppCherry2.png")
-st.subheader("Welcome To AppCherry")
-st.write("AppCherry es una plataforma web, dónde los vendedores y compradores puedes elegir como una opción elegíble.")
-st.write("Con esta plataforma tendrás mucha comodidad a la hora de buscar o vender productots.")
-st.write("Cabe aclarar que esta página fue hecho por @WikiDev, talvez no sea alguien conocido.")
-st.write("Esta página es una beta v1.0, así que es posible la precencia de algún error.")
-st.write("Si tiene algúna duda o simplemente quieres dar algún error ocurrido puedes contactarme, por @WikiDeveloper@gmail.com")
-st.subheader("¡Agradezco! su paciencia, Estaré al tanto del proyecto lo mejor pósible por su comodidad.")
+# Configuración de la página
+st.set_page_config(
+    page_title="OptiJuegos",
+    page_icon="🎮",
+    layout="centered",
+)
 
+# Estilo CSS personalizado para replicar la estética
+st.markdown("""
+    <style>
+        body {
+            background-color: #000000;
+            color: white;
+        }
+        .title {
+            font-size: 50px;
+            text-align: center;
+            font-weight: bold;
+            color: #00ffcc;
+        }
+        .subtitle {
+            font-size: 24px;
+            text-align: center;
+            color: white;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .stButton>button {
+            background-color: #00ffcc;
+            color: black;
+            padding: 10px 24px;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-st.subheader("Tendrás que registrarte para procceder!")
+# Título principal
+st.markdown('<div class="title">OptiJuegos</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">¡Bienvenido a la nueva era del gaming!</div>', unsafe_allow_html=True)
 
-st.write("Si no te registras no podrás usar la app.")
-st.write("Solo Tendrás que poner un nombre, una contraseña osea crear una, y un correo eléctronico.")
-
-nombre = st.text_inpu("Nombre")
-correo = st.text_input("Correo_Eléctronico")
-numero = st.text_input("Número")
-
-st.subheader("Descripción")
-
-st.write("Esta página fué hecha 100% con streamlit, y la página está siendo mantenida y actualizada por mí.")
-st.write("La página Está en desarrollo, así que ahora no se podrá públicar ni comprar nada, pero dentro de 2 días será posible.")
-st.write("La página Es (BETA), así que es común algún error.")
-
-st.text_input("¿Cómo Debería Mejorarla?")
-
-Acepto = st.button("Acepto")
-
-if Acepto:
-    if Acepto:
-        st.success("Gracias por su opinión")
-    else:
-        st.warning("Diga algúna opinión sobre como mejorar la página.")
-
-st.info("Puedes visitar Mi página de juegos:)")
-
-st.write("https://wikiproyects.blogspot.com/2025/05/blog-post.html")
+# Contenedor de botones
+st.markdown('<div class="button-container">', unsafe_allow_html=True)
+col1, col2 = st.columns(2)
+with col1:
+    st.button("JUEGO 1")
+    st.button("JUEGO 2")
+with col2:
+    st.button("JUEGO 3")
+    st.button("JUEGO 4")
+st.markdown('</div>', unsafe_allow_html=True)
